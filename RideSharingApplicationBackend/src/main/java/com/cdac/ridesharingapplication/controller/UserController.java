@@ -16,7 +16,7 @@ import com.cdac.ridesharingapplication.dto.LoginDTO;
 @RequestMapping("/user")
 public class UserController 
 {
-	 @Autowired
+	    @Autowired
 	    private UserService userService;
 	    
 	    @PostMapping("/register")

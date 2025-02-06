@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -39,15 +40,15 @@ public class Driver {
     //private UserRole role;
 
     private String password;
-//    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
-//    private License license;
+     @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
+     private License license;
 
     @JsonIgnore
     @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Ride> rides = new ArrayList<>();
 
-//    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Vehicle vehicle;
+    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Vehicle vehicle;
 
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
