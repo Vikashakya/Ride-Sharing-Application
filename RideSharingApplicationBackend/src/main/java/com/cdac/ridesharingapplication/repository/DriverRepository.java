@@ -21,6 +21,7 @@ public interface DriverRepository  extends JpaRepository<Driver, Long>{
 	Optional<Driver> findByEmail(String username);
 	boolean existsByEmail(String email);
 	boolean existsByMobile(String mobile);
+	//hello
 	@Transactional
 	@Modifying
     @Query("update Vehicle v set v.color = ?2, v.company = ?3, v.licensePlate = ?4, v.model = ?5, v.year = ?6, v.capacity=?7 where v.id = ?1")
